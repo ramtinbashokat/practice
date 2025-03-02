@@ -1,5 +1,6 @@
 import React from "react";
 import ProductList from "./components/ProductList";
+import UserList from "./components/UserList";
 
 function App() {
   const products = [
@@ -21,6 +22,11 @@ function App() {
     const inputValue = document.getElementById("inputField").value;
     console.log("input value", inputValue);
   };
+  const users = [
+    { id: 1, name: "John Doe", age: 28, city: "New York" },
+    { id: 2, name: "Jane Smith", age: 34, city: "Los Angeles" },
+    { id: 3, name: "Alice Johnson", age: 23, city: "Chicago" },
+  ];
   return (
     <>
       <div className="min-h-screen flex flex-col item-center justify-center bg-gray-100 p-4 ">
@@ -28,7 +34,7 @@ function App() {
           product List
         </h1>
         <ProductList products={products} />
-        <div className="p-6 flex flex-col items-center justify-center space-y-4">
+        <div className="p-6 flex flex-col items-center justify-center space-y-4 border-b-2">
           <input
             className="border p-2 rounded-md w-64 bg-white border-2 border-sky-500"
             type="text"
@@ -42,6 +48,12 @@ function App() {
             show in console
           </button>
         </div>
+        <>
+          <h1 className="text-3xl font-bold text-gray-800 mb-4 text-center ">
+            User List
+          </h1>
+          <UserList users={users} />
+        </>
       </div>
     </>
   );
